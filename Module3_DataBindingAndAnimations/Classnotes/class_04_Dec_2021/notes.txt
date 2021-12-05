@@ -1,0 +1,84 @@
+
+//// Data Binding: Communication between template and the component class
+
+
+
+/// Component Interaction
+
+Parent to child ->
+    - from parent component we will do a property binding
+    - @Input() in the child component
+
+Child to Parent ->
+    - @Output in the child component
+    - EventEmitter in the component: emit the values from the child component towards the parent component
+    - event binding in the parent component
+
+
+//// What is Animation ???
+
+    - illusion of movement
+    - created with a number of images put together in a quick succession
+
+    - angular animation will directly use the CSS concepts
+        - need to be clear with advanced concepts of CSS (Cascsding style sheet)
+
+
+    TO create animations in Angular:
+        (1) Import Browser ANimations module in the app.module
+        (2) Create some animations
+            - you must be good with CSS
+            - 4 small functionalities
+        (3) link / attach the animations in the component
+            - remember some sytax
+
+
+    example: moving ball
+
+
+
+//// Lifecycle hooks 
+
+    -> lifecycle of component
+
+   import { onInit } from '@angular/core';
+
+   @Component({
+       selector: ''
+       templateUrl: ''
+       styleUrls: []
+   })
+   export class User implements onInit {
+
+       constructor() {
+           // get called on the initialisation
+       }
+
+       ngOninit() {
+           // ready for usage
+           // we can make API calls to fetch the data, set some configurations
+       }
+
+       ngOnChanges() {
+           // gets executed whenever the bindings change in the component
+       }
+
+       ngAfterViewInit() {
+           // gets executed after the component renders on the DOM
+       }
+
+       ngDoCheck() {
+           // gets executed whenever we trigger change in the component
+       }
+
+       ngOnDestroy() {
+           // when the component is removed from the DOM
+       }
+
+   }
+
+
+
+
+
+
