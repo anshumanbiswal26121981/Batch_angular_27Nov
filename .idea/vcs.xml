@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module1_GettingStartedAngular/class_notes/class_27_Nov_2021/my-first-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module1_GettingStartedAngular/my-first-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module2_ModulesAndComponents/classnotes/class_28_Nov_2021/my-second-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module2_ModulesAndComponents/my-second-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module3_DataBindingAndAnimations/Classnotes/class_04_Dec_2021/angular-animation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module3_DataBindingAndAnimations/Classnotes/class_04_Dec_2021/component-interaction-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module3_DataBindingAndAnimations/Classnotes/class_04_Dec_2021/lifecycle-hooks-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/my-app" vcs="Git" />
+  </component>
+</project>
