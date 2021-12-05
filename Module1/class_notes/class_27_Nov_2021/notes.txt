@@ -1,0 +1,324 @@
+
+Angular course, pre-requisites:
+    -> HTML (https://w3schools.com/)
+    -> CSS (https://w3schools.com/)
+    -> JavaScript (https://javascript.info/)
+
+
+FE (UI / client side), View
+    -> HTML: Hyper(linkages) Text(content) Markup(made of of tags) Language(medium of communication)
+    -> CSS: is used to style the HTML
+        -> we can write our own CSS,  AND/OR
+        -> we can use external libraries / frameworks
+            e.g -> angular material / bootstrap / materialize
+    -> JavaScript
+        -> we can write our own JavaScript (20%)
+        -> we can integrate external libraries and frameworks (80%)
+            e.g.
+                -> Jquery
+                -> Angular
+                -> react
+                -> vue
+                -> ember
+                -> backbone
+
+BE (Server side), controller
+    -> Server Side tech
+        -> APIs 
+            -> .Net
+            -> Java
+            -> Scala
+            -> Kotlin
+            -> NodeJS
+
+    -> Database drivers
+        -> mongoose
+        -> JDBC
+
+DB (Storages), Model
+    -> NoSQL
+        -> MongoDb
+        -> CouchDB
+        -> Redis
+        -> etc
+    -> SQL
+        -> MS SQL Server
+        -> MySQL
+        -> DB2
+        -> etc
+
+
+
+////  JavaScript
+
+    -> also known as ECMA Script
+    -> ECMA: European Computer Manufacturer's Association
+        -> this is an agency which lays down the rules for the javascript standardization
+        -> then every browser vendor implements these rules as per specification
+        -> ES5: version of javascript 1997 - 2015
+        -> ES6 / ES2015: version of javascript introduced in the 2015
+        -> ES7
+    -> JavaScript is loosely coupled, no type safety
+        e.g.
+            var num = 10;
+            num = 'Welcome'; // no error
+
+    -> Typescript: Superset of javascript
+        -> on top of ES6, Microsoft tea made it type safe
+            -> type safety ?
+                var num: number = 10;
+                num = 'Welcome'; // compile time error
+            -> compiler (AOT) / transpiler : convert the TS code into JS
+        
+
+
+//// Angular
+
+    -> Angular is a javascript framework
+        -> set of libraries + environment (Angular CLI)
+
+    -> Angular JS (2015) - 1.8.X 
+        -> Library
+        -> JavaScript
+        -> it had some performance issues
+
+    -> Angular 2+ / Angular
+        -> framework 
+        -> Typescript or Dart as a Language
+        -> Angular CLI (command line interface)
+        -> v13 latest
+        -> angular.io
+
+
+
+Traditional Applications:
+    -> w3schools.com 
+    -> multiple HTML pages which will be served in every request
+    -> intial request, the index.html page is loaded into the server
+    -> upon navigation, I request of another HTML page from the browser
+    -> the new HTML page will be loaded into the browser
+    -> the routing is managed by the server
+    -> asp / jsp / php
+    -> pros:
+        -> initial page load time is lesser
+
+    -> cons:
+        -> subsequent page loads take almost the same amount of time as the initial page load
+
+
+
+Single Page Applications:
+    -> angular.io
+    -> all the content and the intial HTML page is loaded into the browser in the very first request
+    -> upon subsequent navigation
+        -> only the JSON data is requested from the server
+        -> as all the required content is already in the browser
+    -> the routing is managed in the browsers
+    -> angular, React, vue
+        -> pros:
+            -> subsequent page loads are very fast
+
+        -> cons:
+            -> the initial page load time is more
+
+    
+/// MVC Design pattern:
+
+Model: data structures / holds data / deals with data
+
+View: layer to consume / template
+
+Controller: business logic 
+
+
+1. View ---> Controller
+2. Controller ---> Model
+3. Model ---> Controller
+4. Controller ---> view
+
+-> view and model do not interact directly
+-> controller is the glue b/w view and model
+
+
+/// MVVM Archicture
+
+Model
+ViewModel (glue b/w view and model)
+View
+
+
+/// install angular
+
+-> NodeJS : javascript run time environment
+    -> https://nodejs.org/en/download/
+    -> after installation, verify the installation
+        > node -v
+
+-> Angular CLI
+    > npm install -g @angular/cli
+
+    to verify:
+    > ng version
+
+-> code editor
+    https://code.visualstudio.com/download
+    
+
+/// Angular CLI
+
+    Angular application
+        -> create
+        -> build
+        -> manage 
+        -> test
+        -> execute
+
+
+// To create an agular application
+
+    > ng new <app_name>
+
+    example:
+
+    > ng new my-first-app
+
+
+// To run
+
+    go inside the app folder
+    > cd my-first-app
+
+    run the application
+    > ng serve
+
+// To access
+
+    http://localhost:4200/ 
+
+
+/// understand the folder structure :
+
+(1) package.json : contains the metadata about the project
+                    -> identifying metadata
+                        -> name, version, tags, author
+                    -> functional metadata
+                        -> scripts, dependencies, dev-dependencies
+(2) /node_module : it contains all the dependencies and dev dependencies
+(3) package-lock.json : it tracks the version numbers of all the dependencies
+(4) /src : contains the source code files
+(5) .browserlistrc : browser specific information
+(6) .editorconfig : IDE related information
+(7) .gitignore : contains the file and folders which must be taken away from github tracking
+(8) angular.json : All the angular commands and configuration are here
+(9) karma.conf.js : test runner related information is here 
+(10) README.md : to give the textual information about the project
+(11) tsconfig.json : Typescript related configuration
+(12) tsconfig.app.json : Typescript related configuration specific to the app code
+(13) tsconfig.spec.json : Typescript related configuration specific to the testing code
+
+
+testing:
+    unit testing
+        - automated unit testing
+            - library to write the test cases
+            - test runner 
+        - angular uses jasmine and Karma
+
+    functional testing
+        e2e
+    integration testing
+
+
+
+///// Building blocks of angular 
+
+(1) Modules
+(2) Components
+(3) metadata
+(4) templates : HTML Files attached to the Components
+(5) data binding
+(6) directives
+(7) Pipes : used for data formatting
+(8) Services and dependency injection : singleton approach 
+
+
+/// Modules (functional areas of an application)
+    -> Components (controls certain section on the screen)
+
+
+
+    HDFC bank web app:  divide this app into functional areas
+
+        Payment Module
+            -> UPI Component
+            -> IMPS Component
+            -> RTGS Component
+            -> NEFT Component
+
+        Loans Module
+            -> Home Loan Component
+            -> Car Loan Component
+            -> Personal Loan Component
+
+        Investment Module
+            -> PPF Component
+            -> MF Component
+            -> SIP Component
+            -> FD Component
+            -> PMS Component
+
+        Insurance Module
+            -> Life Insurance Component
+            -> Health Insurance Component
+            -> Car Insurance Component
+
+
+/// Components  : controls certain section on the screen
+
+    -> template (HTML files)
+    -> Typescript file attached
+    -> style file is attached for styling purposes
+    -> reusability
+
+
+
+/// Metadata : 
+
+    general syntax:
+
+        Metadata / Decorator
+        export class <classsName> {
+
+        }
+
+    example:
+
+        @NgModule({
+
+        })
+        export class PaymentsModule {
+
+        }
+
+
+        @Component({
+
+        })
+        export class RtgsComponent {
+
+        }
+
+        @Directive({
+
+        })
+        export class HighlightDirective {
+
+        }
+
+
+
+
+
+    
+
+

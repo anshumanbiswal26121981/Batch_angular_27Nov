@@ -1,0 +1,163 @@
+///// How Angular app works:
+
+-> How any web page works ???
+
+    Critical Rendering path:
+        -> Browser starts parsing the HTML (Goal here is to create the DOM)
+        -> Browser encounters many tags including the script files, link tags and any other external sources
+        -> Browser also starts converting the CSS into CSSOM
+        -> after that the browser merges the DOM with CSSOM
+        -> starts Rendering the tree of DOM and CSSOM
+        -> it starts painting the UI on the screen
+
+-> The angular code attached as script files also gets donwloaded into the browser
+
+-> angular gets bootstrapped
+
+    -> main.ts
+        Bootstraps the Root module
+
+    -> root module will now bootstrap the root component
+        Root component start rendering the view on the screen
+
+    -> <app-root></app-root> 
+        -> this is not a standard HTML element
+        -> this is a custom tag only to be understood by angular
+
+    -> atleast one module known as root module
+
+    -> atleast one component known as root component
+
+
+//// Modules
+    -> it is the functional area of the app
+    -> it binds the components / services / directives / pipes etc together
+    -> so that angular is aware of all the artefacts
+    -> root module: will contain the over all configuration of the app
+
+    @NgModule({
+        imports: [
+            // to import other modules
+        ],
+        declaration: [
+            // to declare the angular artefacts which will be a part of this module, components, directives, pipes etc associated with this module
+        ],
+        exports: [
+            // to export any functionality from this module
+        ],
+        providers: [
+            // to attach the singleton objects such as services here
+        ],
+        bootstrap: [
+            // to launch a component of the module
+        ]
+    })
+    class AppModule {
+
+    }
+
+
+    @Component({
+        
+    })
+    class ProductsComponent {
+        @Input()
+        listOfProducts: any = [];
+
+        @Output()
+        onSelectProduct = 
+
+        decorator
+        mapProductsWithPrice() {
+
+        }
+    }
+
+
+Singleton: any object which is intialised only once throughout the lifecycle of the application
+    -> services declared as singleton ?
+        -> we can share the common data
+        -> we can share the common logic
+        -> we can interact with the external world
+
+        -> so we need consistency of the data across various components
+
+
+
+
+//// Components
+    - a Template (view) - HTML file
+    - typescript class / logic - .ts file (controller)
+    - data (Model) - present in the ts file
+
+    to create a component
+        - can do it manually
+        - can use CLI to create a component
+            > ng generate component footer
+            > ng g c footer
+    
+
+/// Bootstrap framework
+
+    -> open source CSS framework
+    -> predefined css classes to enhance the look and feel of the application
+    -> it also provides responsiveness to the web pages
+
+
+    To integrate bootstrap in the angular application:
+        (1) is to specify the CDN links in the index.HTML
+        (2) is to use npm to install it as a dependency and then use it
+
+
+
+/// Data Binding:
+
+    -> the direction of binding can be from TS to HTML
+    -> the direction of binding can be from HTML to TS
+    -> angular supports the two way data binding
+
+
+    Types of bindings: 
+    
+    (1) string interpolation
+            -> in .ts file : content = 'welcome'
+            -> in html file : <div>{{ content }}</div>
+            -> output : Welcome
+
+            -> the direction of binding is from TS to HTML
+
+
+    (2) property binding
+            -> in html file :  <img [src]="imageSource"/>
+            -> in ts file :  imageSource: string = 'https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png';
+            -> the direction of binding is from TS to HTML
+            -> the direction of binding is from HTML to TS (parent child relationship, where parent template can pass data to the child component class)
+
+
+    (3) event binding 
+            -> events like:
+                -> click
+                -> hover
+                -> mouseenter
+                -> mouseleave
+                -> etc
+
+            -> in html :  <button (click)="showPopup($event)">Click me</button>
+            -> in ts : 
+                        showPopup(event: any) {
+                            alert('Hi, how are you ?');
+                        } 
+            -> the direction of binding is from HTML to TS
+            -> the direction of binding is from TS to HTML (parent child relationship, where a child component's ts code can generate an event which can be captured by the parent component's HTML file)
+
+
+    (4) two way data binding
+            -> we combine the property binding and event binding
+            -> [()]
+            -> 'ngModel' is needed to handle the two way data binding
+            -> to have access to 'ngModel', we need to include FormsModule in the root Module
+            
+            -> in HTML: <input type="text" [(ngModel)]="inputTextValue"/>
+            -> in TS: inputTextValue: string = 'abcd@ghq.com';
+            -> the direction is both ways from HTML to TS and from TS to HTML
+
