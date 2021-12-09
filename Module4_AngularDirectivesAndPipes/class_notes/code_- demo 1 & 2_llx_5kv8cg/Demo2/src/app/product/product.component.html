@@ -1,0 +1,230 @@
+<div>
+
+        <div class="row">
+        
+         
+        
+          <div class="col-8">
+        
+         
+        
+        <div class="card">
+        
+          <div class="card-header bg-info">
+  
+            <div class="row">
+        
+              <div class="col-sm-7">
+        
+                <h3>SHOPPING LIST</h3>
+        
+              </div>
+        
+              <div class="col-sm-5">
+        
+                 <select class="form-control"  [(ngModel)] = "sortOption">       
+        
+                <option value="product_name|asc">Sort By Name (A to Z)</option>
+        
+                <option value="product_name|desc">Sort By Name (Z to A)</option>
+        
+                <option value="product_price|lth">Sort By Price (Low to High)</option>
+        
+                <option value="product_price|htl">Sort By Price (High to Low)</option>
+        
+              </select>
+        
+              </div>
+        
+            </div>
+        
+          </div>
+        
+          <div class="card-body">
+        
+            <div class="row">
+        
+              <div class="col-xl-4 col-sm-6 col-12 border border-warning mb-2" *ngFor = "let item of products | sortBy : sortOption">
+        
+         
+        
+              
+        
+                <div class="row text-center mb-2">
+        
+                  <div class="col-12">
+        
+                      <img class="img-fluid mt-3" src="{{item.product_image}}" alt="Card image cap">
+        
+                  </div>
+        
+                </div>
+        
+         
+        
+                <div class="row">
+        
+                  <div class="col-12">
+        
+                     <h6 class="card-title font-weight-bold" > {{item.product_name}}</h6>
+        
+                  </div>
+        
+                </div>
+        
+         
+        
+                <div class="row">
+        
+                      <div class="col-md-6">
+        
+                        <p class="card-text"> <small> {{item.product_weight}}  </small></p>
+        
+                      </div>
+        
+                      <div class="col-md-6">
+        
+                      <p class="text-right"> <small> Rs {{item.product_price | currency: 'INR':true}}  </small> </p>
+        
+                      </div>
+        
+                    </div>
+        
+         
+        
+                <div class="row text-center mb-1">
+        
+                  <div class="col-12">
+        
+                    <button class="btn btn-sm btn-primary" (click)="addToCart(item)">Add to Cart</button>
+        
+                  </div>
+        
+                </div>
+        
+         
+        
+              
+        
+         
+        
+              </div>
+        
+            </div>
+        
+           
+        
+          </div>
+        
+          <div class="card-footer text-center">Copyright</div>
+        
+        </div>
+        
+         
+        
+          </div>
+        
+         
+        
+          <div class="col-xl-4">
+        
+            <div class="card">
+        
+          <div class="card-header bg-warning">
+        
+            <div *ngIf="productList.length == 0">You have no items in your basket</div>
+        
+            <div *ngIf="productList.length == 1">You have {{productList.length}}  item in your basket</div>
+        
+         
+        
+             <div *ngIf="productList.length > 1">You have {{productList.length}}  items in your basket</div>
+        
+          </div>
+        
+          <div class="card-body">
+        
+            <div class="row">
+        
+              <div class="col-12">
+        
+                <div class="text-danger" *ngIf="errorItem">
+        
+                  You have already this item in your list
+        
+                </div>
+        
+              </div>
+        
+            </div>
+        
+           <div class="row">
+        
+                  <div class="col-12" >
+        
+        <table class="table table-borderless">
+        
+            <thead>
+        
+              <tr>
+        
+                <th>Product</th>
+        
+              
+        
+                <th>Amount</th>
+        
+                   <th>Actions</th>
+        
+              </tr>
+        
+            </thead>
+        
+            <tbody>
+        
+              <tr defColOnEvent *ngFor="let cart of productList">
+        
+                <td>{{cart.product_name}} </td>
+        
+              <td>{{cart.product_price | currency: 'INR':true}} </td>
+        
+              <td>
+        
+                <button class="btn btn-info btn-sm" title="Remove Item" (click)="removeItem(cart)"><i class="fas fa-trash fa-sm"></i></button>
+        
+              </td>
+        
+            
+        
+              </tr>
+        
+            
+        
+            </tbody>
+        
+          </table>
+        
+         
+        
+                  </div>
+        
+                </div>
+        
+          </div>
+        
+          <div class="card-footer bg-dark text-white text-center">
+        
+            Total Amount: Rs. {{total() | currency: 'INR':true}} 
+        
+            </div>
+        
+        </div>
+        
+          </div>
+        
+        </div>
+        
+        
+        
+        
+        </div>

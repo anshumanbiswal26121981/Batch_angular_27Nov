@@ -1,0 +1,101 @@
+
+/// Directives: 
+    -> Used to manipulate the DOM
+    -> control sections on the screen
+    -> JS + HTML (optional)
+    -> usage in HTML templates
+
+    Types of Directives:
+
+    (1) Components: they are also directives
+        -> Components can be reused
+        -> Components can manipulate the DOM
+
+    (2) Structural Directives: Alter the structure of DOM
+            -> Add more elements
+            -> delete elements
+            -> replace elements
+
+            e.g.
+                -> *ngIf : conditionally adds/removes the elements from the DOM
+                -> *ngFor : used to generate more elements on the DOM after iterating over a collection of data
+                -> [ngSwitch] : based on multiple conditions, you can manipulate the DOM
+                
+
+    (3) Attribute Directives:
+        -> only modify the appearance of the HTML elements
+        -> do not add or remove new HTML elements on the DOM
+        -> e.g.
+            -> [ngClass] : it can apply css classes conditionally
+            -> [ngStyles] : it can apply inline css styles conditionally
+            
+
+    (4) Custom directives: 
+        -> user defined structural directives are possible
+        -> user defined Attribute directives are possible
+
+
+
+//// ng-template   vs   ng-container
+
+    -> both are used to group the elements together 
+    -> without having the need to introduce newer elements which will be rendered on the page
+    -> ng-template : reusability
+    -> ng-container : nest multiple structural directives, then  we use ng-container
+
+
+/// custom directive: 
+    -> when you take your mouse over an element, it gets highlighted
+    -> when you take away your mouse from the element, it goes back to normal
+
+    Events:
+        -> mouseenter
+        -> mouseleave
+    
+    HostListener
+        -> decorator to refer the element on which the interaction is going to happen
+
+    ElementRef
+        -> it provides a reference to the element on which we apply the directive
+
+
+
+///// Pipes:
+
+    -> used to format the appearance of any HTML element
+    -> can only be used in the HTML templates
+    -> while interpolation the pipe has the ability to format the output before it can be displayed on the screen
+    -> pipes do not change the underlying data, they only modify the appearance of the data
+
+
+    Types of pipes:
+
+        (1) in-built pipes:
+            - strings
+            - number
+            - currency
+            - date
+            - json
+
+        (2) custom pipes: user-defind pipes
+
+            example:
+            I need to filter a list of students based on the grades secured by them
+
+
+
+Pure and Impure Pipes:
+
+    Please read Data Types in Javascript:
+
+        (1) Primitive
+            - string
+            - number
+            - boolean
+            - null
+            - undefined
+
+        (2) Reference
+            - function
+            - object
+            - array

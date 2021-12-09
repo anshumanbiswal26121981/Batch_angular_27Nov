@@ -1,1 +1,12 @@
-<p>child works!</p>
+<div style="margin:30px; border: 1px solid black ;padding: 20px;">
+    <p>child component</p>
+    <!-- Getting from parent component -> Child component user variable and from there user objects is getting fetched-->
+    <h4>User name : {{user.name}}</h4>
+    <h4>Course : {{user.course}}</h4>
+    <h4>modules : {{user.modules}}</h4>
+    <h4>is acive : {{user.isActive}}</h4>
+
+    <!-- To show child to parent interactions-->
+    <button (click)="buttonClick()">Emit from child</button>
+</div>
+

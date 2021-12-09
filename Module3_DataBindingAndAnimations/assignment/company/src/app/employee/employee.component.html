@@ -1,0 +1,57 @@
+<div>
+    <p>Employee Table</p>
+
+<table class="emp_table">
+  <thead class="table-dark"> 
+  <tr>
+    <th scope="col">Employee Id</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Salary</th>
+    <th scope="col">DOB</th>
+    <th scope="col">Email</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let emp of emplist">
+        <td>
+          <div *ngIf="!showEdit"> {{emp.employeeId}} </div>
+
+          <div *ngIf="showEdit"> <input type="text" value="{{emp.employeeId}}"> </div>
+        </td>
+        <td>
+          <div *ngIf="!showEdit">  {{emp.firstName}} </div>
+          <div *ngIf="showEdit"> <input type="text" value="{{emp.firstName}}"> </div>
+         </td>
+        <td>
+          <div *ngIf="!showEdit">  {{emp.lastName}} </div>
+          <div *ngIf="showEdit"> <input type="text" value="{{emp.lastName}}"> </div>
+          </td>
+        <td>
+          <div *ngIf="!showEdit">  {{emp.salary}} </div>
+          <div *ngIf="showEdit"> <input type="text" value="{{emp.salary}}"> </div>
+        </td>
+        <td>
+          <div *ngIf="!showEdit">  {{emp.dob | date}} </div>
+          <div *ngIf="showEdit"> <input type="text" value="{{emp.dob | date}}"> </div>
+          </td>
+        <td>
+          <div *ngIf="!showEdit">  {{emp.email}}</div>
+          <div *ngIf="showEdit"> <input type="text" value="{{emp.email}}"> </div>
+        </td>
+        <td>
+        <div *ngIf="!showEdit; else elseBlock">
+          <button (click)="editEmpoyee()">Edit</button>
+      </div>
+      <ng-template #elseBlock>
+        <button (click)="updateEmployee()">Update</button>
+      </ng-template>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+ </div>

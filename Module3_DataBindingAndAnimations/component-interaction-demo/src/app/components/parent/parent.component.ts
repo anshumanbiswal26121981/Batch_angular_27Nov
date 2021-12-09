@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  userObj = {
+    name: "Anshuman",
+    course: "angular",
+    modules:10,
+    isActive: true
+  }
+  
+  dataFromChild = null;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  comingFromChild(event: any) {
+    debugger
+    this.dataFromChild = event;
   }
 
 }
