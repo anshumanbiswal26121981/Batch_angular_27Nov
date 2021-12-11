@@ -1,0 +1,250 @@
+
+/// Pure and Impure Pipes
+
+
+    -> pure vs impure change
+
+
+    -> Types of data:
+
+        -> primitive type
+            -> number
+            -> string
+            -> boolean
+
+        -> reference type
+            -> objects
+            -> arrays
+            -> functions / classes
+
+
+    -> pure change:
+        -> either change a primitive type
+        -> or, change the reference to a reference type
+
+    -> impure change:
+        -> change the value contained in the reference type
+
+    -> it is done to improve the performance of Angular by default
+
+    -> to enable the pipe to detect the changes in the value of a reference type:
+
+        @Pipe({
+
+            pure: false
+        })
+
+
+//// Services and Dependency Injection
+
+
+/// Dependency Injection ???
+
+    DI as a design pattern:
+
+    Case 1:
+
+        class Brick {}
+
+        class Cement {}
+
+        class Wall {
+            // creating the objects inside the Wall Class
+            const brickObj = new Brick();
+            const cementObj = new Cement();
+        } 
+
+        wallObj = new Wall();
+
+
+    Case 2:
+
+        class Brick {}
+        brickObj = new Brick();
+
+        class Cement {}
+        const cementObj = new Cement();
+        
+        class Wall {
+            constructor(brickObj, cementObj) {}
+        }
+
+        wallObj = new Wall(brickObj, cementObj);
+
+
+/// Singleton ?
+
+    -> when any object is initialised throughout the lifecycle of an application
+
+
+//// Angular Services:
+
+    -> Injectibles
+        -> built on the DI pattern / premise
+
+    -> Singleton: initialised only once
+
+    -> Uses:
+
+        -> to share the data across various components
+            - componentA (list of products)
+            - componentB (list of products)
+        
+        -> to share the commonly used logic across components
+
+        -> to external interaction such as making API calls
+
+        -> to share the common configuration of the application in various components
+
+
+    -> A Service can be used in another service
+
+
+/// implement services:
+    - How to create and inject the service
+    - how to use a service
+    - RxJS (Objservables / Operators)
+    - Hierarchy of Service Injections
+
+    /src
+        /app
+            /services
+                - productsService
+                    return a list of products
+                - todoService
+                    make an API call and get the data from another server
+                        - HttpClientModule
+                        - HttpClient
+                        - RxJS
+                        - RxJS / Operators
+            /components
+                - products
+                - todos
+
+    
+    - How to create a service
+
+        Decorator
+        Export class
+
+        @Injectible({
+
+        })
+        export class ProductsService {
+
+        }
+
+    
+
+/// Hierarchical Injector
+
+-> Root Module (App Module)
+
+    -> Root component (App Component)
+
+        -> componentA
+
+            -> componentA1
+
+                -> componentA11
+
+                -> componentA12
+
+            -> componentA2
+
+                -> componentA21
+
+                -> componentA22
+
+            -> componentA3
+
+        -> componentB
+        
+            -> componentB1
+
+            -> componentB2
+
+            -> componentB3
+
+
+
+/// providedIn: 'root'
+
+    -> angular application has a root injector
+    -> root injector enables a Dependency Injection from the root of the application
+    -> providedIn: 'root' : it is asking the root injector to provide this service from the root module of the application
+
+
+
+
+//// Observables 
+
+    handling Async code in JavaScript ???
+        - callbacks (ES5)
+        - Promises
+        - async and await
+        - Reactive programming / passive programming
+            - observe changes in an observable by an observer
+            - RxJS (Independent of Angular , https://rxjs.dev/)
+                -> functions
+                -> Operators
+
+
+    Async tasks:
+
+        -> Making API calls
+            FE <------> BE <-----> DB
+
+            Create (C)
+            Reading (R)
+            Updating (U)
+            Deleteing (D)
+
+            -> you cannot gurentee the response time
+                -> depends on:
+                    -> network 
+                    -> load on the BE server
+                    -> amount of data
+                    -> processing capablility of the FE client
+
+            -> the async repsone received from an API interaction will be treated as an Observable
+
+
+        -> Scheduling functions:
+            - setTimeout
+            - setInterval
+
+
+    /// How to make use of observables while making an HTTP call:
+
+        (1) make an HTTP Call
+
+            -> URL
+            -> Verb - GET, PUT, POST, DELETE, OPTIONS, HEAD, FETCH etc
+            -> Headers (default + additional headers)
+            -> Body (optional)
+
+
+        (2) Receive an Observable and Convert into Usable Format
+
+        (3) All the components which need the data, will subscribe to the Observable
+            - subscribe()
+
+        (4) Then all the Components who have subscribed will be provided with the data
+
+
+        e.g.
+
+        const URL = 'https://jsonplaceholder.typicode.com/todos';
+
+        httpClient.get(URL).subscribe(
+            next: (resp) => {
+
+            },
+            error: (error) => {
+
+            },
+            complete: () => {
+                // notify that the request is finished
+            }
+        )
