@@ -1,0 +1,43 @@
+<div>
+    <p>Employee Table</p>
+
+<table class="emp_table">
+  <thead class="table-dark"> 
+  <tr>
+    <th scope="col">Employee Id</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Salary</th>
+    <th scope="col">DOB</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let emp of emplist" appColor>
+        <td>
+          <div > {{emp.employeeId}} </div>
+        </td>
+        <td>
+          <div>  {{emp.firstName}} </div>
+         </td>
+        <td>
+          <div>  {{emp.lastName}} </div>
+          </td>
+        <td>
+          <div>  {{emp.salary}} </div>
+        </td>
+        <td>
+          <div>  {{emp.dob | date}} </div>
+          </td>
+        <td>
+          <div>  {{emp.email}}</div>
+        </td>
+        <td>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+ </div>

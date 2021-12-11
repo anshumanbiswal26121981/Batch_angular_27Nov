@@ -1,0 +1,62 @@
+<div>Normal case pipes {{title}}</div>
+
+<div>Upper case pipes {{title | uppercase}}</div>
+
+<div>Lower case pipes {{title1 | lowercase}}</div>
+
+<div>Title case pipes {{title1 | titlecase}}</div>
+
+<div>Slice case pipes {{title1 | slice: 4}}</div>
+
+<div>Slice case pipes from back {{title1 | slice: -4}}</div>
+
+<div>Slice case pipes from back {{title1 | slice: 4:7}}</div>
+
+
+<div>date output : {{dob}} </div>
+
+<div>Normal date output : {{dob | date}}</div>
+
+<div>Short date output : {{dob | date: 'short'}}</div>
+
+<div>Full date output : {{dob | date: 'full'}}</div>
+
+<div>Custom date output : {{dob | date: 'MM/dd/yyyy'}}</div>
+
+<div>Custom date output : {{dob | date: 'dd/MM/yyyy'}}</div>
+
+<div>Custom date output : {{dob | date: 'dd/MMM/yyyy'}}</div>
+
+<div>Custom date output : {{dob | date: 'yyyy-MM-dd'}}</div>
+
+
+<div>Currency Dollar: {{money | currency}}</div>
+
+<div>Currency pound: {{money | currency: 'GBP'}}</div>
+
+<div>Currency INR: {{money | currency: 'INR'}}</div>
+
+<div>List of products is : {{listOfProducts | json}}</div>
+
+<br/>
+<br/>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Grade
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students | gradeFilter: 'C': 'D'">
+      <td>{{ student.name }}</td>
+      <td>{{ student.grade }}</td>
+    </tr>
+  </tbody>
+</table>

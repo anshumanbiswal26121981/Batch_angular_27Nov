@@ -1,0 +1,87 @@
+<div *ngIf = "isMacOs" appMyHighlight>
+  I am using mac os
+</div>
+
+<div *ngIf = "isUbuntu" appMyHighlight>
+  I am using ubuntu
+</div>
+
+<div *ngIf = "iWindows" appMyHighlight>
+  I am using windows
+</div>
+
+<div *ngIf = "isIos" appMyHighlight>
+  I am using ios
+</div>
+
+<br/>
+<button (click)="isMacOs = ! isMacOs">Toggle Macos</button>
+<button (click)="iWindows = ! iWindows">Toggle windows</button>
+<button (click)="isUbuntu = ! isUbuntu">Toggle ubuntu</button>
+<br/>
+<br/>
+<br/>
+<button (click)="isIos = ! isIos">Change phone</button>
+
+<div *ngIf="isIos then iphone else android"></div>
+
+<ng-template #iphone>I am using iphone</ng-template>
+
+<ng-template #android>I am using android</ng-template>
+
+<br/>
+<br/>
+
+
+<h3>Products</h3>
+
+
+<ul>
+  <li *ngFor="let prod of listOfProducts" appMyHighlight>
+
+    {{prod.name}} - ${{prod.price}}, in Stock : {{prod.isAvailable}}
+  </li>
+</ul>
+
+<ul>
+  <ng-container *ngFor="let prod of listOfProducts">
+  <ng-container *ngIf="prod.isAvailable">
+    <li appMyHighlight>
+
+      {{prod.name}} - ${{prod.price}}, in Stock : {{prod.isAvailable}}
+    </li>
+  </ng-container>
+  </ng-container>
+  
+</ul>
+
+<br/>
+<br/>
+
+
+<button (click)="selectAngular()">Select Angular</button>
+<button (click)="selectReact()">Select React</button>
+<button (click)="selectPython()">Select Python</button>
+<button (click)="selectVue()">Select Vue</button>
+
+<div [ngSwitch]="selectCourses" appMyHighlight>
+
+  <div *ngSwitchCase="'angular'">I Am an Angular developer</div>
+
+  <div *ngSwitchCase="'react'">I Am an React developer</div>
+
+  <div *ngSwitchCase="'vue'">I Am an Vue developer</div>
+
+  <div *ngSwitchCase="'python'">I Am an python developer</div>
+
+  <div *ngSwitchDefault>Pls select a course</div>
+</div>
+
+<!-- Atrribute directives-->
+<h2 appMyHighlight [ngClass]="{'more': proficiency == 'good', 'less' : proficiency == 'average', 'veryless' : proficiency == 'better', 'poor' : proficiency == 'bad'}">
+  Welcome to edureka, course proficiency {{proficiency}}
+</h2>
+
+<h2 [ngStyle]="{'color' : myColor}" appMyHighlight>
+Welcome to the course
+</h2>
