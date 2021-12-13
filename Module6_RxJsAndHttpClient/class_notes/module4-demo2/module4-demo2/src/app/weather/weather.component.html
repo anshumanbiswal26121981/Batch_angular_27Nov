@@ -1,0 +1,84 @@
+<body><br><br><br>
+            
+
+    <div class="form-group" style="align-content: center">
+        <input class="form-control" type="text" placeholder="Enter city name" id="city" (ngModel)="cityName"
+            name="cityname" style="width: 25%" (input)="onSearchLocationWithEvent($event)"  >
+        <!-- <input ngControl="location" class="form-control" type="text" placeholder="Enter city name" id="city" (input)="onSearchLocation(input.value)" required #input > -->
+        <!--  two ways data binding through [(ngModel)] -->
+        <button class="btn btn-primary" [disabled]="disabledForecastButton"  (click)="onSubmitDatabinding()">Forecast</button>          
+    </div>
+
+   
+
+<div class="header">
+<div class="header-top">
+    <h2>{{ weatherForecastData?.city.name }}, {{ weatherForecastData?.city.country }} Weather Forecast</h2>
+    <ul>
+        <!-- <li><p>°F</p></li> -->
+        <li><p class="cen">°C</p></li>
+    </ul>
+    <div class="clear"> </div>
+</div>
+<div class="header-bottom">
+    <div class="header-bottom1">
+        <div class="header-head">
+        <h4>{{ weatherForecastData?.list[0].weather[0].description | titlecase   }}</h4>
+        <div *ngIf="weatherForecastData?.list[0].weather[0].description !='heavy intensity rain'"><img src="assets/images/{{ weatherForecastData?.list[0].weather[0].main }}.png" alt="" /></div>
+        <div *ngIf="weatherForecastData?.list[0].weather[0].description =='heavy intensity rain'"><img src="assets/images/ThunderIcon.png" alt="" /></div>
+        <h6>{{ weatherForecastData?.list[0].main.temp | number: '1.0-0' }}°</h6>
+        <div class="bottom-head">
+            <p>{{ weatherForecastData?.list[0].dt_txt | date:'EEE, MMMM dd '}}</p>
+            
+        </div>
+    </div>
+    </div>
+    <div class="header-bottom1 header-bottom2">
+        <div class="header-head">
+    <h4>{{ weatherForecastData?.list[8].weather[0].description | titlecase   }}</h4>
+   <div> <img src="assets/images/{{ weatherForecastData?.list[8].weather[0].main }}.png" alt="" /></div>
+    <h6>{{ weatherForecastData?.list[8].main.temp | number: '1.0-0' }}°</h6>
+    <div class="bottom-head">
+            <p>{{ weatherForecastData?.list[8].dt_txt | date:'EEE, MMMM dd '}}</p>
+           
+        </div>
+    </div>
+    </div>
+    <div class="header-bottom1">
+        <div class="header-head">
+        <h4>{{ weatherForecastData?.list[16].weather[0].description | titlecase   }}</h4>
+        <div><img src="assets/images/{{ weatherForecastData?.list[16].weather[0].main }}.png" alt="" /></div>
+        <h6>{{ weatherForecastData?.list[16].main.temp | number: '1.0-0' }}°</h6>
+        <div class="bottom-head">
+            <p>{{ weatherForecastData?.list[16].dt_txt | date:'EEE, MMMM dd '}}</p>
+        
+        </div>
+    </div>
+    </div>
+    <div class="header-bottom1 header-bottom2">
+        <div class="header-head">
+    <h4>{{ weatherForecastData?.list[24].weather[0].description | titlecase   }}</h4>
+    <div><img  src="assets/images/{{ weatherForecastData?.list[24].weather[0].main }}.png" alt="" /></div>
+    <h6>{{ weatherForecastData?.list[24].main.temp | number: '1.0-0' }}°</h6>
+    <div class="bottom-head">
+            <p>{{ weatherForecastData?.list[24].dt_txt | date:'EEE, MMMM dd '}}</p>
+          
+        </div>
+        </div>
+    </div>
+    <div class="header-bottom1">
+        <div class="header-head">
+        <h4>{{ weatherForecastData?.list[32].weather[0].description | titlecase   }}</h4>
+        <div><img src="assets/images/{{ weatherForecastData?.list[32].weather[0].main }}.png" alt="" /></div>
+        <h6>{{ weatherForecastData?.list[32].main.temp | number: '1.0-0' }}°</h6>
+        <div class="bottom-head">
+            <p>{{ weatherForecastData?.list[32].dt_txt | date:'EEE, MMMM dd '}}</p>
+            
+        </div>
+    </div>
+    </div>
+    <div class="clear"> </div>
+</div>
+</div>
+<br><br><br>
+</body>

@@ -1,0 +1,53 @@
+
+/// RxJS
+    
+    -> https://rxjs.dev ?
+
+
+    -> pipe ?
+
+
+- prototypal inheritance in JS
+
+
+
+//// HTTP Client:
+
+    -> to interact with the external applications
+    -> over HTTP protocol
+
+
+// anatomy of HTTP request
+
+    (1) URL - address of the resource
+    (2) Verb -
+            -> GET
+            -> POST
+            -> PUT
+            -> DELETE
+            -> OPTIONS
+            -> LINK
+            -> UNLINK
+            -> HEAD
+    (3) Headers - they convey the extra information
+        -> some of the default headers are added by HTTP Client
+        -> you can add/modify more headers on top of this
+    (4) Body - contains the data coming from the client to the server
+
+
+--> lets create a web server which can offer the APIs
+    -> https://www.npmjs.com/package/json-server
+
+
+--> Angular app
+
+    /src
+        /app
+            /components
+                -> users component
+            /services
+                -> users service
+
+
+
+-> Models ?
