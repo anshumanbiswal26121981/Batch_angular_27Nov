@@ -60,3 +60,26 @@
     </tr>
   </tbody>
 </table>
+
+<br/>
+<br/>
+Pure and impure change demo
+<button (click)="addStudent()">Add Student</button>
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Grade
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students | gradeFilter: 'A': 'B'">
+      <td>{{ student.name }}</td>
+      <td>{{ student.grade }}</td>
+    </tr>
+  </tbody>
+</table>

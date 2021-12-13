@@ -33,4 +33,12 @@ export class AppComponent {
     {name:"neel", grade: 'A'}
   ]
 
+
+  addStudent() {
+    this.students.push({
+      'name':`Student-${this.students.length+1}`,
+      grade: 'A'
+
+    })
+  }
 }
