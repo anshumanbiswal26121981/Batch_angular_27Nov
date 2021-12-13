@@ -11,6 +11,7 @@
     <mapping directory="$PROJECT_DIR$/Module3_DataBindingAndAnimations/Classnotes/class_04_Dec_2021/lifecycle-hooks-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module4_AngularDirectivesAndPipes/class_notes/class_05_Dec_2021/directives-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module4_AngularDirectivesAndPipes/class_notes/class_05_Dec_2021/pipes-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module5_AngularServicesAndDependencyInjections/class_notes/class_11_Dec_2021/service-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/my-app" vcs="Git" />
   </component>
 </project>
