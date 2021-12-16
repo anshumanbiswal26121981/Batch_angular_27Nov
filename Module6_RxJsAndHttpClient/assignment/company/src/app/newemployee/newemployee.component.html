@@ -1,0 +1,38 @@
+<button (click)="fetchEmployees()">Show Employees</button>
+
+<div>
+    <p>Employee Table</p>
+
+<table class="emp_table" border="1px">
+  <thead class="table-dark"> 
+  <tr>
+    <th scope="col">Employee Id</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Age</th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let emp of employee_list">
+        <td>
+          <div > {{emp.id}} </div>
+        </td>
+        <td>
+          <div>  {{emp.employee_name}} </div>
+         </td>
+         <td>
+          <div>  {{emp.employee_salary}} </div>
+        </td>
+        <td>
+          <div>  {{emp.employee_age}} </div>
+          </td>
+        <!-- <td>
+          <div>  {{emp.profile_image}}</div>
+        </td> -->
+    </tr>
+  </tbody>
+</table>
+
+  
+ </div>

@@ -1,0 +1,49 @@
+<button (click)="fetchUsers()">Show users</button>
+<br/>
+<br>
+
+<table border="1px">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+    
+            <th>
+                id
+            </th>
+    
+            <th>
+                age
+            </th>
+    
+            <th>
+                company
+            </th>
+        </tr>
+    
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.company}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br/>
+<br/>
+
+<input type="text" [(ngModel)]="userObj.id" placeholder="id" />
+<br/>
+<input type="text" [(ngModel)]="userObj.firstName" placeholder="name" />
+<br/>
+<input type="number" [(ngModel)]="userObj.age" placeholder="age" />
+<br/>
+<input type="text" [(ngModel)]="userObj.company" placeholder="company" />
+
+<br/>
+<button (click)="createNewUser()">Create User</button>
+
