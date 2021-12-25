@@ -18,6 +18,8 @@
     <mapping directory="$PROJECT_DIR$/Module7_AngularRoutesAndNavigation/class_materials/class_19_Dec_2021/routing-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module8_HandlingFormsInAngular/class_notes/class_19_Dec_2021/reactive-forms-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module8_HandlingFormsInAngular/class_notes/class_19_Dec_2021/template-driven-forms" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module9_ValidatingAngularForms/class_notes/class_25_Dec_2021/angular-template-forms-custom-validation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module9_ValidatingAngularForms/class_notes/class_25_Dec_2021/reactive-forms-custom-validation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/my-app" vcs="Git" />
   </component>
 </project>
