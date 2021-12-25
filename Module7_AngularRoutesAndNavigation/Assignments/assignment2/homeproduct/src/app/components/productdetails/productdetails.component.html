@@ -1,0 +1,14 @@
+<div *ngIf="isShown">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+              <h2>Name: {{selectedProd.name}}</h2>
+              <h3>Description:{{selectedProd.desc}}</h3>
+              <h4>Price:{{selectedProd.price}}</h4>
+          </div>
+          <div class="col-sm-4">
+            <img class="phone" src={{selectedProd.image}} alt="Card image cap" style="height: 200px; width: auto;">
+        </div>
+    </div>
+    <a href="/products" >Go back to products</a>
+</div>

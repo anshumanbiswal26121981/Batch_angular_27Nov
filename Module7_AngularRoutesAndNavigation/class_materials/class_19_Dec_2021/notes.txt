@@ -1,0 +1,101 @@
+//// Routing in Angular:
+
+-> Angular is a SPA
+-> routing is handled within the browser
+
+MPA: routing is handled by a server
+
+How routing is handled within the browser ???
+
+(1) Base Routes: prefix used with all the routes in an application
+
+    https://www.mywebsite.com/login ---> https://www.mywebsite.com/v1/login
+    https://www.mywebsite.com/home ---> https://www.mywebsite.com/v1/home
+
+    -> v1: is the base route
+
+
+(2) Routes : Mapping of paths and components
+(3) Router : Logic that executes the mapping of paths and components
+(4) Router Link : changes the path in the address bar of the browser
+(5) Router Outlet : to render the component mapped to a particular route
+
+
+HDFC Bank
+
+    components
+        -> accounts
+        -> cards
+        -> loans
+        -> offers
+        -> ErrorComponent
+
+    services
+        -> offers
+
+    app.routing.ts
+        -> to handle the routing
+    
+    app.component.html
+        -> navigation menu
+            -> links to various components
+
+    include bootstrap
+
+
+/// Navigating Programmatically:
+
+
+/// Child Routes
+
+
+/// Query params
+
+    ?<key>=<value>&<key>=<value>
+
+    http://localhost:4200/hdfc/accounts/offers?category=Accounts
+
+
+
+/// Route params
+
+    http://localhost:4200/hdfc/accounts/download/mini
+    http://localhost:4200/hdfc/accounts/download/detailed
+
+
+/// Route guards ?
+
+    -> They will be created by extending the inetrfaces
+    -> They are declared as Injectibles
+    -> We use these Injectibles in the routing file
+
+    -> CanActivate : it is used to run and check wether a user is permitted to transistion to a route or not
+    -> CanDeactivate : it will be used for certain checks before we can transition 
+                        e.g.
+                        -> please save your changes 
+                        -> are you sure you want to exit 
+
+
+
+
+/// Anatomy of the URL:
+
+https://learning.edureka.co/classroom/presentation/1559/13366/1490757?tab=CourseContent&batchId=20882
+
+<protocol>://<subdomain>.<domain>:<port>/<path>/<route-params>?<key>=<value>&<key>=<value>
+
+-> protocol: https
+-> subdomain: learning
+-> doamin: edureka.co
+-> port: Not present / default  port used (80 and 443)
+-> path: /classroom/presentation
+-> route-params: 1559, 13366, 1490757
+-> query-params: tab = CourseContent, batchId = 20882
+
+
+/// Location startegies
+
+    http://localhost:4200/hdfc/cards ( / )
+
+    http://localhost:4200/#/hdfc/cards (#, hash location startegy)
+

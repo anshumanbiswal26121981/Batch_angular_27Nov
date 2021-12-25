@@ -1,0 +1,54 @@
+<div class="container p-4 my-5">
+    <h1>Employee Registration Form</h1>
+    <div class="card" style="max-width:700px;">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmitForm()" [formGroup]="registerForm">
+                <div class="form-row row">
+                    <div class="form-group col-5">
+                        <input placeholder="Full Name" type="text" class="form-control" formControlName="fullname" />
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email"/>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="text" class="form-control" formControlName="address" placeholder="Address"/>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="text" class="form-control" formControlName="city" placeholder="City"/>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="text" class="form-control" formControlName="phoneno" placeholder="Phone No."/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row row">
+                    <div class="form-group col-5">
+                        <input type="password" class="form-control" formControlName="password"  placeholder="Password"/>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row row">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" formControlName="tosaccpted">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Agree with terms and conditions
+                        </label>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="form-row row text-center">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>

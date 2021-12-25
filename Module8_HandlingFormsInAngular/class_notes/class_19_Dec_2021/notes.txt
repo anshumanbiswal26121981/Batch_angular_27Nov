@@ -1,0 +1,103 @@
+
+// Form handling in Angular
+
+Form in HTML ?
+
+    -> used for capturing user input
+    -> input fields used
+    -> and submit the data to the server where it can be saved
+    -> <form> element
+
+-> Login / sign up / create profile / create a post / apply for job etc
+
+
+FE (Angular) - client
+    -> user does the data entry task
+    -> validate the user input
+        -> length
+        -> required
+        -> email format
+        -> number format
+    -> if validations pass, you can submit the data
+
+
+BE (NodeJS / Java / .net) - server
+    -> BE will receive the data from the FE
+    -> BE can store / process the data etc
+
+
+HTML:
+
+<form action="" name="">
+    <input type="text"/>
+    <input type="password"/>
+    <input type="checkbox"/>
+    <input type="number"/>
+    <button type="submit">Save</button>
+</form>
+
+    HTML form submit -> page reloaded
+
+
+Angular:
+    -> is an SPA
+    -> we cannot afford to reload the app on form submit
+    -> ngSubmit: event will be used in the Angular to handle the form submit without page reload
+    -> also provides Validation functionality to validate the user inputs
+
+
+/// Types of Forms in Angular:
+
+    (1) Template driven forms
+        -> greater control is given to the template to control the behaviour of the form
+        -> makes heavy usage of directives to tackle the form functionality
+        -> validation is also run by the directives
+        -> used for simple tasks
+
+    (2) Reactive forms (latest)
+        -> greater control is with the typescript class to control the behaviour of the form
+        -> restrict the usage of directives
+        -> used for complex data entry tasks
+
+
+/// Template driven forms
+
+    -> 2 way data binding [(ngModel)]
+    -> directives
+    -> integrate bootstrap
+
+    -> src
+        -> app
+            -> components
+                -> login
+                    -> form
+                        -> username
+                            -> username is required
+                            -> min 6 characters long
+                            -> max 25 characters long
+                            -> email must be of the email format
+                        -> password
+                            -> password is required
+                        -> submit
+
+                
+/// Reactive Forms
+
+    -> control rests with the typescript class
+    -> template is just used for having the control fields
+    -> validation will be taken care by the typescript class
+    -> allows us to add the fields dynamically
+
+
+    -> src
+        -> app
+            -> components
+                -> signup
+                    -> firstName
+                    -> lastName
+                    -> dob
+                    -> email
+                    -> password
+                    -> confirmPassword
+    
+

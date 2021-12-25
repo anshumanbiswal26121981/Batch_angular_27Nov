@@ -1,0 +1,21 @@
+
+<table *ngIf="isShown" lass="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of listOfproducts">
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td> <a class="btn btn-primary"  role="button" (click)="goToProductDetails(product.id)" >View Details</a></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <router-outlet></router-outlet>
+</div>

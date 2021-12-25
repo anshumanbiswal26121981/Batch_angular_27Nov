@@ -1,0 +1,74 @@
+<div class="container my-4 p-4">
+    <h1>Reactive forms demo</h1>
+    <div class="card" style="max-width:700px;">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmitForm()" [formGroup]="registerForm">
+                <div class="form-row row">
+                    <div class="form-group col-2">
+                        <label>Title</label>
+                        <select class="form-control" formControlName="title">
+                            <option value="">Select</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                        </select>
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('title')">Title is requeired</div>
+                    </div>
+                    <div class="form-group col-5">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" formControlName="firstName" />
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('firstName')">First Name is requeired</div>
+                    </div>
+                    <div class="form-group col-5">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" formControlName="lastName" />
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('lastName')">Last Name is requeired</div>
+                    </div>
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-6">
+                        <label>DOB</label>
+                        <input type="date" class="form-control" formControlName="dob" />
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('dob')">Dob is requeired</div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Email</label>
+                        <input type="email" class="form-control" formControlName="email" />
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('email')">Email is requeired</div>
+                        <div class="text-danger" *ngIf="submitted && checkEmailValidation('email')">Email format is not correct</div>
+                    </div>
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-6">
+                        <label>Password</label>
+                        <input type="password" class="form-control" formControlName="password" />
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('password')">Password is requeired</div>
+                        <div class="text-danger" *ngIf="submitted && checkminLengthValidation('password')">Password must be 6 characters long</div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Confirm password</label>
+                        <input type="password" class="form-control" formControlName="confirmPassword" />
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('confirmPassword')">Confirm Password is requeired</div>
+                
+                    </div>
+                </div>
+                <br/>
+                <br/>
+
+                <div class="form-row row text-center">
+                    <button class="btn btn-primary" type="submit">Signup</button>
+                    <button class="btn btn-default" type="reset">Cancel</button>
+                </div>
+
+                <br/>
+                <br/>
+
+                <div class="form-row row text-center">
+                    <button class="btn btn-primary m-2" type="Signup" (click)="setDefaultValues()">Set default values</button>
+                    <button class="btn btn-primary m-2" type="Signup" (click)="patchValues()">Set patch values</button>
+                    <button class="btn btn-primary m-2" type="Signup" (click)="resetForm()">Reset values</button>
+                </div>>
+            </form>
+        </div>
+    </div>

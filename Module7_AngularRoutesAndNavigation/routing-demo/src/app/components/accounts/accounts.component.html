@@ -1,0 +1,15 @@
+<h3 class="my-2">Accounts Page</h3>
+
+<ul>
+    <li>
+        <button class="btn" (click)="goToOffers()">Account Offers</button>
+    </li>
+    <li>
+        <button class="btn" (click)="downloadStatement('mini')">Download Mini Statement</button>
+    </li>
+    <li>
+        <button class="btn" (click)="downloadStatement('Detailed')">Download Detailed Statement</button>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>

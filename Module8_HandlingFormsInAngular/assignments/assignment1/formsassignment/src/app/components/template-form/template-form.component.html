@@ -1,0 +1,52 @@
+<div class="card p-4 my-5">
+    <h1>User registration using Template driven form</h1>
+    <div *ngIf="formError" class="alert alert-danger">{{formError}}</div>
+    <div class="card-body">
+        <form #myForm="ngForm" (ngSubmit)="login(myForm)">
+            <div class="form-group">
+                <input placeholder="Full name" class="form-control" type="text" [(ngModel)]="templateformmodel.fullname" name="fullname" id="fullname" #fullname="ngModel" required/>
+                <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                    <div class="text-danger" *ngIf="fullname.errors?.['required']">Username is required</div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input placeholder="Email" class="form-control" type="email" [(ngModel)]="templateformmodel.email" name="email" id="email" #email="ngModel"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
+                    <div class="text-danger" *ngIf="email.errors?.['pattern']">Email is not valid</div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input placeholder="Phone No." class="form-control" type="text" [(ngModel)]="templateformmodel.phoneno" name="phoneno" id="phoneno" #phoneno="ngModel" required />
+                <div *ngIf="phoneno.invalid && (phoneno.dirty || phoneno.touched)">
+                    <div class="text-danger" *ngIf="phoneno.errors?.['required']"> Phone number is required</div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input placeholder="Password" class="form-control" type="password" [(ngModel)]="templateformmodel.password" name="password" id="password" #password="ngModel" required />
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div class="text-danger" *ngIf="password.errors?.['required']">Password is required</div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input placeholder="Confirm Password" class="form-control" type="password" [(ngModel)]="templateformmodel.confirmpassword" name="confirmpassword" id="confirmpassword" #confirmpassword="ngModel" required />
+                <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)">
+                    <div class="text-danger" *ngIf="confirmpassword.errors?.['required']">Confirm password is required</div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" [(ngModel)]="templateformmodel.tosaccpted" name="tosaccpted" id="tosaccpted" #tosaccpted="ngModel" required>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Agree with terms and conditions
+                </label>
+            </div>
+              <br/>
+            <br/>
+            <button class="btn btn-primary" type="submit"  [disabled]="!myForm.form.valid">Signup</button>
+        </form>
+    </div>

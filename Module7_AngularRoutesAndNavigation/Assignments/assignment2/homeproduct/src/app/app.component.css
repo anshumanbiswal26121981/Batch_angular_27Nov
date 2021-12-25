@@ -1,0 +1,30 @@
+.wrapper{
+    border-style: groove;
+}
+
+.btn-group-vertical {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: groove;
+}
+
+.active-link {
+    color: blue !important;
+    background-color: lightgray;
+}
+
+div > img {
+    width:0px; /*width of your image*/
+    height:0px; /*height of your image*/
+    margin:10px; /* If you want no margin */
+    padding:10px; /*if your want to padding */
+}
