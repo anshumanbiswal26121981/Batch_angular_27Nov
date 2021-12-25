@@ -1,0 +1,44 @@
+/// Form Validation ?
+
+
+Template Driven Forms
+    - custom Validation for Template driven forms:
+        -> rely on directives
+
+        example: username must contain the word amazon
+                    -> if found, username is valid
+                    -> else username is invalid
+
+
+
+Reactive Forms
+    - custom Validation in reactive form
+        -> create functions for validations in the controller class
+
+        example: password and confirmPassword fields must match
+
+
+
+-> To create own custom Validatiors
+
+    import { AbstractControl, ValidationsFn } from "@angular/form"
+
+
+
+
+// setting and unsetting the validators ad-hoc / dynamically
+
+-> to set the validators programmatically:
+
+    addValidators()
+    updateValueAndValidity()
+
+
+
+-> to remove the validators programmatically
+
+    removeValidators()
+    updateValueAndValidity()
+
+
+
