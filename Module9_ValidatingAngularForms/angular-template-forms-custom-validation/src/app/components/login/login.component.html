@@ -1,0 +1,31 @@
+<div class="card p-4 my-5">
+    <h1>Template driven form</h1>
+    <div *ngIf="formError" class="alert alert-danger">{{formError}}</div>
+    <div class="card-body">
+        <form #myForm="ngForm" (ngSubmit)="login(myForm)">
+            <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" type="email" [(ngModel)]="loginmodel.username" name="username" id="username" #username="ngModel" required minlength="6" maxlength="25" userName [ngModelOptions]="{standalone: true}"/>
+                <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                    <div class="text-danger" *ngIf="username.errors?.['required']"> Username is required</div>
+                    <div class="text-danger" *ngIf="username.errors?.['minlength']"> Username must be of 6 characters long</div>
+                    <div class="text-danger" *ngIf="username.errors?.['maxlength']"> Username cannot be greater than 25 characters</div>
+                    <div class="text-danger" *ngIf="username.errors?.['userName']"> Username does not contain 'amazon'</div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" [(ngModel)]="loginmodel.password" name="password" id="password" #password="ngModel" required />
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div class="text-danger" *ngIf="password.errors?.['required']">Password is required</div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+            <button class="btn btn-primary" type="submit"  [disabled]="!myForm.form.valid">Login</button>
+            <button class="btn btn-default" type="reset">Cancel</button>
+        </form>
+    </div>

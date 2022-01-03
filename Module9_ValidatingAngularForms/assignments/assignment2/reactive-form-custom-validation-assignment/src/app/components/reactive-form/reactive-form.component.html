@@ -1,0 +1,66 @@
+<div class="container p-4 my-5">
+    <h1>Employee Registration Form</h1>
+    <div class="card" style="max-width:700px;">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmitForm()" [formGroup]="registerForm">
+                <div class="form-row row">
+                    <div class="form-group col-5">
+                        <input placeholder="Full Name" type="text" class="form-control" formControlName="fullname" required/>
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('fullname')">Full Name is requeired</div>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email" required email/>
+                            <div class="text-danger" *ngIf="submitted && checkRequiredValidation('email')">Email is requeired</div>
+                            <div class="text-danger" *ngIf="submitted && checkEmailValidation('email')">Email is not valid</div>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="text" class="form-control" formControlName="address" placeholder="Address" required/>
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('address')">Address is requeired</div>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="text" class="form-control" formControlName="city" placeholder="City" required/>
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('city')">City is requeired</div>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="text" class="form-control" formControlName="phoneno" placeholder="Phone No." required/>
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('phoneno')">Phone number is requeired</div>
+                        <div class="text-danger" *ngIf="submitted && checkminLengthValidation('phoneno')">Phone number should be minimum of 10 digit</div>
+                        <div class="text-danger" *ngIf="submitted && checkmaxLengthValidation('phoneno')">Phone number can be maximum of 12 digit</div>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row row">
+                    <div class="form-group col-5">
+                        <input type="password" class="form-control" formControlName="password"  placeholder="Password" required/>
+                        <div class="text-danger" *ngIf="submitted && checkRequiredValidation('password')">Password is requeired</div>
+                        <div class="text-danger" *ngIf="submitted && checkminLengthValidation('password')">Password should have minimum 6 characters</div>
+                    </div>
+                    <br/>
+                    <div class="form-group col-5">
+                        <input type="password" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" formControlName="confirmPassword" placeholder="Confirm Password" required/>
+                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <div class="text-danger" *ngIf="submitted && checkRequiredValidation('confirmPassword')">Confirm Password is requeired</div>
+                            <div class="text-danger" *ngIf="submitted && f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                        </div>
+               
+                    </div>
+                </div>
+                <br/>
+                <div class="form-group form-row row">
+                    <input type="checkbox" formControlName="tosaccepted" id="tosaccepted" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.tosaccepted.errors }" />
+                    <label for="tosaccepted" class="form-check-label">Accept Terms & Conditions</label>
+                    <div *ngIf="submitted && f.tosaccepted.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+                </div>
+                <br/>
+                <br/>
+                <div class="form-row row text-center">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
