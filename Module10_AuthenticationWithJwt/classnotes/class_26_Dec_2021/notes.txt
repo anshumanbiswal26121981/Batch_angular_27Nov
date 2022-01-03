@@ -1,0 +1,40 @@
+
+/// Authentication 
+
+
+
+/// Authorization
+
+
+
+
+/// types:
+
+-> short lived token (JWT)
+    -> accessToken
+
+-> long lived token (JWT)
+    -> refreshToken
+
+
+BE: https://github.com/abhisheksaini333/node-bulk-email-utility
+
+FE:
+/src
+    /app
+        /components
+            /home
+            /login
+        /helpers
+            auth-guard.service.ts
+        /services
+            /authentication.service.ts
+        app-routing.ts
+
+
+
+/// Interceptors:
+
+    -> FE : angular, react etc
+
+    -> BE : Java, .Net, NodeJS
