@@ -2,6 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module10_AuthenticationWithJwt/classnotes/class_26_Dec_2021/angular-jwt-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module11_TestingAndDeploymentInAngular/ClassNotes/class_02_Jan_2022/git-demo/git-demo-02-jan-2022" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module11_TestingAndDeploymentInAngular/ClassNotes/class_02_Jan_2022/testing-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Module11_TestingAndDeploymentInAngular/ClassNotes/class_08_Jan_2022/docker-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module1_GettingStartedAngular/class_notes/class_27_Nov_2021/my-first-app" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module1_GettingStartedAngular/my-first-app" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module2_ModulesAndComponents/classnotes/class_28_Nov_2021/my-second-app" vcs="Git" />

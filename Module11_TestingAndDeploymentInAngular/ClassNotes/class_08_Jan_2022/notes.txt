@@ -1,0 +1,135 @@
+
+/// Docker : 
+
+Stanges Involved in software development before actual users can use it ?
+
+Environment Drift:
+    -> Dev ( Dev env )
+    -> QA ( QA env )
+    -> UAT ( UAT env )
+    -> Production ( Production env )
+
+
+Containerisation:
+    -> application code
+    -> dependencies
+    -> configurations
+    -> runtime env
+
+
+VM: Virtual Machines:
+    -> Guest Operating System
+        -> application code
+        -> dependencies
+        -> configurations
+        -> runtime env
+
+
+Docker: it is a Containerisation software, can be installed on your computer
+
+DckerHub: remote repository of your docker images
+
+
+Docker build 
+    -> creating a docker image
+    -> need a "Dockerfile" to create a docker image
+    -> "Dockerfile" contains the instructions to build an image
+
+Docker image 
+    -> can be run to bring up a Docker Container
+    -> needs a base image for it to run
+
+Docker Container
+    -> inside the container
+        -> application code
+        -> dependencies
+        -> configurations
+        -> runtime env
+
+
+DOcker Image build:
+
+    > docker build -t example:dev .
+
+
+Docker Image run:
+
+    > docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm example:dev
+
+
+
+// Bus ticket booking system
+
+
+-> Common Components
+    -> Header
+    -> Footer
+
+
+Pages:
+    -> Home Page
+        -> use the header Component
+        -> content of the page
+            -> searh the buses
+                -> reactive form
+        -> use the footer Component
+
+    -> Bus listing page
+        -> use the header Component
+        -> content of the page
+            -> List of all the buses that came up in your search
+                -> Bootstrap table
+        -> use the footer Component
+
+    -> seat selection page
+        -> use the header Component
+        -> content of the page
+            -> table to show the seats in the bus
+            -> use checkboxes and css to denote the seats
+            -> fare and a cinfirmation button
+            -> two way data binding
+        -> use the footer Component
+
+    -> passenger information page
+        -> use the header Component
+        -> content of the page
+            -> Capture the passenger details
+                -> reactive forms
+        -> use the footer Component
+
+    -> Ticket review page
+        -> use the header Component
+        -> content of the page
+            -> use the card class of boottsrap to show the ticket review
+        -> use the footer Component
+
+    -> view ticket page
+        -> use the header Component
+        -> content of the page
+            -> use table from boottsrap to show the ticket  
+        -> use the footer Component
+
+
+Services:
+    -> ticket booking service
+        -> getCities
+        -> filter buses
+        -> get seats
+        -> reserve seat
+    -> user service
+        -> save user details
+        -> get user details
+
+
+Routing:
+
+
+Pipes:
+    date, currency, time
+
+
+Bootstrap
+
+
+// No Backend:
+    -> create the data in the service

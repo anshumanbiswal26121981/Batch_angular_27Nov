@@ -1,0 +1,14 @@
+<div class="card mt-4">
+    <h4 class="card-header">You're logged in Assignment2</h4>
+    <div class="card-body">
+        <h6>Users from secure api end point</h6>
+        <div *ngIf="currentUser">
+            <p>Your role is: <strong>{{currentUser[0].role}}</strong>.</p>
+        </div>
+        <ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>
+    </div>
+</div>
+
+<!-- <p>home works!</p> -->

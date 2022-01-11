@@ -1,0 +1,156 @@
+
+/// Testing 
+
+
+Types: 
+    -> Unit Testing : 
+        -> To test the independent unit of code, irrespective of how they are bind to each other
+        -> unit test take very less time to execute
+        -> if unit test take more time, then you must reveisit the functinality
+    -> Funcitonal Testing : 
+        -> To Test each independent Funcitonality
+        -> each functional test may consist of many unit tests
+        -> functional tests take more time to execute
+    -> Integration Testing : 
+        -> To test more than one systems working with each other
+        -> example: FE + BE + DB
+        -> They are slow and async
+
+
+/// Jasmine:
+
+    -> it is a testing framework
+    -> used to create a test bed
+    -> used to initialise the components
+    -> used to compare / ascertain the values
+
+
+    Anatomy of a test case:
+        -> create a test bed
+        -> create a component
+        -> initialise the instance of that component
+        -> test the Funcitonality
+        -> after executing the Funcitonality under test, we compare the actual output with the expected output
+
+    
+    Test Suite:
+        -> it is a group of test cases
+        -> the method used to create a test suite is :
+            describe('', () => {
+                // create the test cases
+            })
+        -> we can nest the test suites logically into each other
+
+    
+    Tets case:
+        -> it is an indiviual test to verify a unit of code
+        -> the method used to create a test case is :
+            it('', () => {
+                // write the test case
+            })
+        -> you can also nest the indiviual test case
+
+
+    e.g.
+
+        describe('to verify the login functionality' , () => {
+
+            it('must be login success on providing the correct user and password', () => {
+                // logic to test
+            })
+
+            it('must be login failure on providing the IN-correct user and password', () => {
+                // logic to test
+            })
+
+            it('must be login failure on providing the IN-correct user but correct password', () => {
+                // logic to test
+            })
+
+            it('must be login failure on providing the correct user but IN-correct password', () => {
+                // logic to test
+            })
+
+
+            describe('password recovery must work', () => {
+
+                it('password recoevry button must be clickable', () => {
+                  // logic to test  
+                })
+
+                it('reset password page must be displayed', () => {
+                  // logic to test  
+                })
+
+            })
+
+        })
+
+
+/// Setup and Teardown
+
+beforeEach: 
+    -> you can setup the environment needed for every single test case to execute.
+    -> it executed before every single test case
+
+afterEach:
+    -> you can teardown the environemnt
+    -> executes after every test case
+
+
+
+
+/// Version control system 
+
+    ->  Central Repo: 
+        -> Github : https://github.com/
+        -> bit bucket
+        -> gitlab
+        -> svn
+        -> tfs
+
+    -> git in the local computer: https://git-scm.com/download
+
+
+
+    
+/// Nginx : can host files to be served upon receving a request
+    -> server to proxy
+    -> server to serve the files
+    -> it acts as a web server
+    -> to download : http://nginx.org/en/download.html
+    -> http://localhost:8080 : default page of nginx
+
+    -> in the angular project, generate the build files:  
+        > ng build
+
+    -> go to the nginx server at below location
+        /usr/local/var/www (create a folder and add all the angular build files here)
+
+    -> make change to the configuration of nginx server, to serve the build files 
+        /usr/local/etc/nginx/nginx.conf
+
+        -> instruct the server to serve the angular build files
+
+            server {
+                listen      9090;
+                server_name  localhost;
+                location / {
+                    root html/angularapp;
+                    index  index.html index.htm;
+                            try_files $uri $uri/ /index.html;
+                    }
+            }
+            
+    
+    -> restart the server
+        > sudo nginx -s stop
+        > sudo nginx
+
+    -> logs will be available at    /usr/local/var/log/nginx
+
+
+
+/// Docker : 
+
+
